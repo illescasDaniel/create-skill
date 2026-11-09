@@ -55,10 +55,11 @@ Only after approval, and with the user's go-ahead to create a public repo:
 ```bash
 git init -b main && git add -A && git commit -m "Add <name> skill"
 gh repo create <owner>/<repo> --public --source . --push
-npx skills add <owner>/<repo> -a claude-code -g -y     # install globally for Claude Code
+npx skills add <owner>/<repo> -a claude-code -a codex -g -y     # install globally for Claude Code and Codex
 ```
 
-Without the `skills` CLI, copy `skills/<name>/` to `~/.claude/skills/<name>/`. Restart the agent session so it loads.
+Without the `skills` CLI, copy `skills/<name>/` to `~/.claude/skills/<name>/` (Claude Code) and `~/.agents/skills/<name>/`
+(Codex). Project-level installs use `.claude/skills/<name>/` and `.agents/skills/<name>/`. Restart the agent session so it loads.
 
 ## Rules
 
