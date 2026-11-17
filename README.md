@@ -1,8 +1,14 @@
+<p align="center"><img src="assets/icon.svg" alt="create-skill icon" width="96"></p>
+
 # create-skill
+
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE) [![Agent Skill](https://img.shields.io/badge/Agent-Skill-3eae84)](https://agentskills.io/)
 
 Turn a workflow into a focused [Agent Skill](https://agentskills.io), with its own repository, a clear README and a review before publication. It works with Claude Code, Codex, Cursor and other agents that load skills.
 
 ## How it works
+
+<img alt="Create skill workflow: define, build, verify and share" src="assets/infographic.png" height="350">
 
 | Step | What happens |
 | --- | --- |

@@ -8,7 +8,7 @@
 
 ## How it works
 
-<A short workflow, table or informative image with alt text.>
+<Include an infographic with alt text and height="350" when image generation is available; otherwise use a workflow table or diagram.>
 
 ## Quick start
 

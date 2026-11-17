@@ -39,7 +39,7 @@ Start from `templates/SKILL.md` and `templates/README.md`.
 
 ## 2. Document, test and evaluate
 
-Write a compact, useful README from `templates/README.md`: icon and honest badges, title and description, how it works, quick start, requirements, evaluation, tests and license. Use a small diagram or infographic when it clarifies the skill; put long examples and manual install in `<details>` or linked docs. Never claim popularity, compatibility, test coverage or results that were not verified. Artwork must match the actual behavior. Limit README infographic height to 350 pixels with an HTML img height attribute, preserving its aspect ratio and meaningful alt text.
+Write a compact, useful README from `templates/README.md`: icon and honest badges, title and description, how it works, quick start, requirements, evaluation, tests and license. Include a workflow infographic for every skill README when image generation is available. If the agent cannot generate images, use an explanatory workflow table or diagram instead; put long examples and manual install in `<details>` or linked docs. Never claim popularity, compatibility, test coverage or results that were not verified. Artwork must match the actual behavior. Limit README infographic height to 350 pixels with an HTML img height attribute, preserving its aspect ratio and meaningful alt text.
 
 If the skill has scripts, add meaningful offline tests using temporary fixtures under the repository's top-level `tests/`, outside the installable skill folder, and a CI workflow where appropriate. Run them and check a scratch installation to verify tests and repo-only assets are not installed. Do not invent tests for instructions alone; explain what remains untested.
 
