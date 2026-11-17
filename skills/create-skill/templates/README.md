@@ -1,39 +1,39 @@
+<p align="center"><img src="assets/icon.svg" alt="<name> icon" width="96"></p>
+
 # <name>
 
-<One paragraph: what the skill does and why it is useful.>
+<Truthful CI, license and requirement badges where available.>
 
-It is an [Agent Skill](https://agentskills.io) (a `SKILL.md` plus <templates / scripts>), so it works in Claude Code,
-Codex, Cursor and any other agent that loads skills.
+<One concise paragraph: what the skill does and why it is useful.>
 
 ## How it works
 
-<Steps or phases, a table if it helps.>
+<A short workflow, table or informative image with alt text.>
 
-## Install
-
-### Any agent: the `skills` CLI
+## Quick start
 
 ```bash
 npx skills add <owner>/<repo>
 ```
 
-It asks which agents to install for and whether to install into the current project or globally. Non-interactive:
-`npx skills add <owner>/<repo> -a claude-code -a codex -y`, plus `-g` for global.
+<details>
+<summary>Manual installation and examples</summary>
 
-### By hand
+<Paths and optional detailed examples.>
 
-Copy the `skills/<name>` folder into your agent's skills directory.
+</details>
 
-| | Project (shared with your team) | All your projects |
-|---|---|---|
-| Claude Code | `.claude/skills/<name>/` | `~/.claude/skills/<name>/` |
-| Codex | `.agents/skills/<name>/` | `~/.agents/skills/<name>/` |
-| Cursor | `.cursor/skills/<name>/` | `~/.cursor/skills/<name>/` |
+## Requirements and limits
 
-## Contributing
+<Requirements, side effects and important limitations.>
 
-Issues and pull requests are welcome. The skill is deliberately short: if a change makes `SKILL.md` longer, it should
-earn it.
+## Evaluation
+
+<Actual results only: identify tool, revision, date, limitations and findings; link docs/evaluation.md. Include a graphic only if it identifies the evaluated artifact and reflects a verified result; include measured submetrics and distinguish quality from security.>
+
+## Tests
+
+<How to run free script tests, what they cover and do not cover; tests belong outside the installed skill folder. Omit or explain when no scripts exist.>
 
 ## License
 

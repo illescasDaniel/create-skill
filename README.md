@@ -1,60 +1,50 @@
 # create-skill
 
-Turn a workflow into an [Agent Skill](https://agentskills.io) that lives in its own GitHub repo, can be installed with
-one command, and is reviewed by you before it goes public. This skill tells your agent how to write a short, well-triggered
-`SKILL.md`, lay out the repo, write the README, and publish and install the result.
-
-It works in Claude Code, Codex, Cursor and any other agent that loads skills.
+Turn a workflow into a focused [Agent Skill](https://agentskills.io), with its own repository, a clear README and a review before publication. It works with Claude Code, Codex, Cursor and other agents that load skills.
 
 ## How it works
 
 | Step | What happens |
-|---|---|
-| **Write `SKILL.md`** | Frontmatter whose description says *what* and *when*; numbered steps; a Rules list. Kept short on purpose |
-| **Write the README** | What it is, how it works, install (`npx skills add`, then by hand), contributing, license |
-| **Review** | The agent shows you the content and waits for your approval |
-| **Publish and install** | After your go-ahead: create the public repo, then install it globally with `npx skills add … -g` |
+| --- | --- |
+| **Write** | Define when the skill applies and the instructions the agent needs. |
+| **Document and test** | Prepare a concise README and meaningful offline tests for scripts. |
+| **Evaluate** | Record available checks and limitations against the actual skill revision. |
+| **Review** | Show the content to the user before publishing. |
+| **Publish and install** | With the user's go-ahead, publish the repository and install the skill. |
 
-Resulting repo layout:
+The installable skill and templates live under `skills/create-skill/`; project documentation and tests belong outside the skill folder.
 
-```
-<name>-skill/
-├── README.md
-├── LICENSE
-├── .gitignore
-└── skills/<name>/
-    ├── SKILL.md
-    └── templates/ scripts/ agents/   (optional)
-```
-
-`templates/` holds a starter `SKILL.md` and `README.md`.
-
-## Install
-
-### Any agent: the `skills` CLI
+## Quick start
 
 ```bash
 npx skills add illescasDaniel/create-skill
 ```
 
-It asks which agents to install for and whether to install into the current project or globally. Non-interactive:
-`npx skills add illescasDaniel/create-skill -a claude-code -a codex -y`, plus `-g` for global.
+Ask your agent to create a skill, describe the workflow and review the result before publishing.
 
-### By hand
+<details>
+<summary>Installation options</summary>
 
-Copy the `skills/create-skill` folder into your agent's skills directory.
+For non-interactive installation, use `npx skills add illescasDaniel/create-skill -a claude-code -a codex -y`; add `-g` for a global install. Or copy `skills/create-skill` into the relevant skills directory:
 
-| | Project (shared with your team) | All your projects |
-|---|---|---|
+| Agent | Project | Global |
+| --- | --- | --- |
 | Claude Code | `.claude/skills/create-skill/` | `~/.claude/skills/create-skill/` |
 | Codex | `.agents/skills/create-skill/` | `~/.agents/skills/create-skill/` |
 | Cursor | `.cursor/skills/create-skill/` | `~/.cursor/skills/create-skill/` |
 
+</details>
+
+## Evaluation and tests
+
+![Unscored evaluation template, showing placeholders for quality dimensions and security](assets/evaluation.svg)
+
+The skill guides authors to test scripts offline, verify scratch installations and document applicable NVIDIA SkillEvaluator checks, including security findings and limitations. **This is an unscored template:** create-skill itself has not been evaluated here. Generated projects should show only measured results for the exact artifact evaluated.
+
 ## Contributing
 
-Issues and pull requests are welcome. The skill is deliberately short: if a change makes `SKILL.md` longer, it should
-earn it.
+Issues and pull requests are welcome. Keep the skill concise: each instruction should earn its place.
 
 ## License
 
-MIT, see [LICENSE](LICENSE).
+[MIT](LICENSE).

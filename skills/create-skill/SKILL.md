@@ -37,11 +37,13 @@ Start from `templates/SKILL.md` and `templates/README.md`.
 - Don't repeat what the agent already knows. Write only what is specific to the user's way of working.
 - Scripts must run with the standard library only.
 
-## 2. Write the README
+## 2. Document, test and evaluate
 
-For people, not agents: one paragraph of what and why, how it works (phases or steps, a table if it helps), install
-(`npx skills add`, then by hand), how it fits with related skills, Contributing, License. Match the tone of the user's
-other skill repos (`sdd-feature-skill`, `memory-bank`).
+Write a compact, useful README from `templates/README.md`: icon and honest badges, title and description, how it works, quick start, requirements, evaluation, tests and license. Use a small diagram or infographic when it clarifies the skill; put long examples and manual install in `<details>` or linked docs. Never claim popularity, compatibility, test coverage or results that were not verified. Artwork must match the actual behavior. Limit README infographic height to 350 pixels with an HTML img height attribute, preserving its aspect ratio and meaningful alt text.
+
+If the skill has scripts, add meaningful offline tests using temporary fixtures under the repository's top-level `tests/`, outside the installable skill folder, and a CI workflow where appropriate. Run them and check a scratch installation to verify tests and repo-only assets are not installed. Do not invent tests for instructions alone; explain what remains untested.
+
+When NVIDIA SkillEvaluator is available, run its applicable keyless checks on the actual skill revision. Record tool versions, date, revision, score, findings and limits in `docs/evaluation.md`, including security findings, checks not run and any prior-revision results. Summarize faithfully in the README; use a score graphic only for a measured result and name the evaluated artifact, revision and date; show meaningful submetrics when actually reported. Do not imply the quality score proves agent performance. Live model evaluations may incur costs: obtain permission before paid runs. If a tool is unavailable or a check cannot run, say so instead of inventing a score. The SVG at `templates/evaluation.svg` is an unscored starting point; adapt it only to verified results, with accessible text and separate quality and security results. Never reuse a component score as a score for the enclosing product.
 
 ## 3. Review before publishing
 
